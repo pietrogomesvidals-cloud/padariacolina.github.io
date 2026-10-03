@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Padaria Colina | Resende - RJ</title>
+
+  <meta
+    name="description"
+    content="Padaria Colina em Resende. Pães fresquinhos, cafés, bolos, doces, salgados e muito mais."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --laranja: #ef741f;
+      --laranja-escuro: #c95413;
+      --preto: #111111;
+      --preto-suave: #1c1c1c;
+      --branco: #ffffff;
+      --creme: #fff8f1;
+      --cinza: #6f6f6f;
+      --cinza-claro: #f2efeb;
+      --borda: rgba(17, 17, 17, 0.1);
+      --sombra: 0 20px 55px rgba(0, 0, 0, 0.13);
+      --raio: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--preto);
+      background: var(--branco);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1140px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: var(--laranja);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      max-width: 620px;
+      color: var(--cinza);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 24px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      color: var(--branco);
+      background: var(--laranja);
+    }
+
+    .btn-primary:hover {
+      color: var(--branco);
+      background: var(--laranja-escuro);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(239, 116, 31, 0.3);
+    }
+
+    .btn-outline {
+      color: var(--branco);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      color: var(--preto);
+      background: var(--branco);
+    }
+
+    /* CABEÇALHO */
+
+    .header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--branco);
+      transition: 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(17, 17, 17, 0.97);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--branco);
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo-symbol {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--branco);
+      background: var(--laranja);
+      font-size: 1.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--laranja);
+      opacity: 1;
+    }
+
+    .nav-links .btn {
+      padding: 11px 19px;
+      color: var(--branco);
+      background: var(--laranja);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      color: var(--branco);
+      background: transparent;
+      font-size: 1.9rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: var(--branco);
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.38)),
+        url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-top: 70px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      line-height: 0.98;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.87);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      margin-top: 58px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.85rem;
+    }
+
+    .hero-highlights span::before {
+      content: "✓";
+      margin-right: 8px;
+      color: var(--laranja);
+      font-weight: 700;
+    }
+
+    /* NOSSA PADARIA */
+
+    .about {
+      background: var(--creme);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-image {
+      height: 570px;
+      overflow: hidden;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-text p {
+      color: var(--cinza);
+      margin-bottom: 18px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      padding: 18px;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      background: var(--branco);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .feature span {
+      color: var(--cinza);
+      font-size: 0.86rem;
+    }
+
+    /* PRODUTOS */
+
+    .products-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: var(--branco);
+      transition: 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra);
+    }
+
+    .product-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      height: 100%;
+      transition: 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.07);
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .product-content p {
+      min-height: 55px;
+      color: var(--cinza);
+      font-size: 0.87rem;
+      margin-bottom: 18px;
+    }
+
+    .product-link {
+      color: var(--laranja-escuro);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* DESTAQUE */
+
+    .highlight {
+      color: var(--branco);
+      background:
+        linear-gradient(90deg, rgba(17, 17, 17, 0.94), rgba(17, 17, 17, 0.63)),
+        url("https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=2000&q=90")
+        center / cover;
+    }
+
+    .highlight-content {
+      max-width: 680px;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 28px;
+    }
+
+    /* LOCALIZAÇÃO */
+
+    .location {
+      background: var(--cinza-claro);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .location-info {
+      padding: 38px;
+      border-radius: var(--raio);
+      color: var(--branco);
+      background: var(--preto);
+    }
+
+    .location-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.3rem;
+      margin-bottom: 25px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .info-icon {
+      color: var(--laranja);
+      font-size: 1.25rem;
+    }
+
+    .info-item span {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.82rem;
+    }
+
+    .map {
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      border-radius: var(--raio);
+      background:
+        linear-gradient(rgba(239, 116, 31, 0.2), rgba(239, 116, 31, 0.2)),
+        url("https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1500&q=80")
+        center / cover;
+    }
+
+    .map-box {
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .map-box h3 {
+      margin-bottom: 12px;
+    }
+
+    /* CONTATO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 65px;
+    }
+
+    .contact-details {
+      margin-top: 25px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      color: var(--branco);
+      background: var(--laranja);
+    }
+
+    .contact-detail small {
+      display: block;
+      color: var(--cinza);
+    }
+
+    .contact-form {
+      padding: 35px;
+      border-radius: var(--raio);
+      background: var(--creme);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      outline: none;
+      background: var(--branco);
+      transition: 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--laranja);
+      box-shadow: 0 0 0 3px rgba(239, 116, 31, 0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      padding: 60px 0 25px;
+      color: rgba(255, 255, 255, 0.75);
+      background: var(--preto);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 45px;
+    }
+
+    footer .logo {
+      margin-bottom: 18px;
+    }
+
+    footer p {
+      max-width: 280px;
+      font-size: 0.88rem;
+    }
+
+    footer h4 {
+      color: var(--branco);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--laranja);
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .socials a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--branco);
+      background: #292929;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: var(--laranja);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      z-index: 999;
+      right: 23px;
+      bottom: 23px;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--branco);
+      background: #25d366;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      font-size: 1.7rem;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* ANIMAÇÕES */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVIDADE */
+
+    @media (max-width: 980px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 18px 5%;
+        background: var(--preto);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links .btn {
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 15vw, 4.7rem);
+      }
+
+      .hero-highlights {
+        display: grid;
+        gap: 12px;
+        margin-top: 38px;
+      }
+
+      .about-grid,
+      .location-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-image {
+        height: 380px;
+      }
+
+      .products-header {
+        display: block;
+      }
+
+      .products-header .section-description {
+        margin-bottom: 25px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 250px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="header" id="header">
+    <div class="container nav">
+
+      <!-- Substitua este símbolo pela logo oficial quando tiver o arquivo -->
+      <a href="#inicio" class="logo">
+        <span class="logo-symbol">✦</span>
+        Padaria Colina
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#padaria">Nossa Padaria</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#contato">Contato</a>
+
+        <a
+          href="https://wa.me/5524992818974"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Peça agora
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-content reveal">
+
+        <div class="section-label">Padaria Colina — Resende/RJ</div>
+
+        <h1>O sabor que faz parte do seu dia.</h1>
+
+        <p>
+          Pães fresquinhos, cafés especiais, doces e muito mais preparados
+          para transformar cada momento em uma experiência deliciosa.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#produtos" class="btn btn-primary">
+            Conheça nossos produtos
+          </a>
+
+          <a href="#localizacao" class="btn btn-outline">
+            Encontre nossa loja
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <span>Produtos frescos todos os dias</span>
+          <span>Qualidade e tradição</span>
+          <span>Atendimento especial</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA PADARIA -->
+    <section class="section about" id="padaria">
+      <div class="container about-grid">
+
+        <div class="about-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1200&q=85"
+            alt="Pães artesanais recém-saídos do forno"
+          />
+        </div>
+
+        <div class="about-text reveal">
+          <div class="section-label">Nossa padaria</div>
+
+          <h2 class="section-title">
+            Tradição que começa no forno e chega até você.
+          </h2>
+
+          <p>
+            Na Padaria Colina, cada produto é preparado com cuidado,
+            ingredientes selecionados e muita dedicação.
+          </p>
+
+          <p>
+            Somos uma padaria feita para fazer parte da rotina da comunidade,
+            oferecendo sabor, qualidade e aquele atendimento que faz você se
+            sentir em casa.
+          </p>
+
+          <div class="about-features">
+            <div class="feature">
+              <strong>Produção artesanal</strong>
+              <span>Receitas preparadas com cuidado todos os dias.</span>
+            </div>
+
+            <div class="feature">
+              <strong>Ingredientes selecionados</strong>
+              <span>Qualidade em cada detalhe dos nossos produtos.</span>
+            </div>
+
+            <div class="feature">
+              <strong>Frescor diário</strong>
+              <span>Pães e quitutes sempre fresquinhos.</span>
+            </div>
+
+            <div class="feature">
+              <strong>Atendimento especial</strong>
+              <span>Um ambiente acolhedor para toda a família.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="section" id="produtos">
+      <div class="container">
+
+        <div class="products-header reveal">
+          <div>
+            <div class="section-label">Nossos produtos</div>
+            <h2 class="section-title">
+              Feitos para despertar seus sentidos.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Dos clássicos da padaria aos sabores especiais, tudo é feito para
+            deixar seu dia mais gostoso.
+          </p>
+        </div>
+
+        <div class="products-grid">
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+                alt="Pães artesanais"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Pães</h3>
+              <p>
+                Pães franceses, artesanais e especiais assados diariamente.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+                alt="Café especial"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Cafés</h3>
+              <p>
+                Cafés especiais para começar o dia com mais energia.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
+                alt="Croissants e confeitaria"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Confeitaria</h3>
+              <p>
+                Croissants, folhados e delícias feitas com carinho.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+                alt="Bolo de chocolate"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Bolos</h3>
+              <p>
+                Bolos caseiros e especiais para todos os momentos.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85"
+                alt="Sanduíche artesanal"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Lanches</h3>
+              <p>
+                Sanduíches preparados na hora com ingredientes frescos.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=900&q=85"
+                alt="Doces variados"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Doces</h3>
+              <p>
+                Doces, sobremesas e sabores que adoçam o seu dia.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
+                alt="Salgados assados"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Salgados</h3>
+              <p>
+                Opções saborosas para lanches, eventos e encomendas.
+              </p>
+              <a href="#contato" class="product-link">
+                Conheça o produto →
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=900&q=85"
+                alt="Produtos recém-saídos do forno"
+              />
+            </div>
+
+            <div class="product-content">
+              <h3>Encomendas</h3>
+              <p>
+                Produtos especiais para festas e celebrações.
+              </p>
+              <a href="#contato" class="product-link">
+                Faça sua encomenda →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUE -->
+    <section class="section highlight">
+      <div class="container highlight-content reveal">
+        <div class="section-label">Todos os dias</div>
+
+        <h2 class="section-title">
+          O aroma do forno sempre esperando por você.
+        </h2>
+
+        <p>
+          Venha tomar um café, comprar aquele pão quentinho ou fazer uma pausa
+          especial no seu dia.
+        </p>
+
+        <a
+          href="https://wa.me/5524992818974"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Fale conosco
+        </a>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="section location" id="localizacao">
+      <div class="container">
+
+        <div class="products-header reveal">
+          <div>
+            <div class="section-label">Nossa localização</div>
+            <h2 class="section-title">Venha nos visitar.</h2>
+          </div>
+
+          <p class="section-description">
+            Estamos esperando por você com produtos fresquinhos e atendimento
+            especial.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-info reveal">
+            <h3>Padaria Colina</h3>
+
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <span>Endereço</span>
+                Rua Hugo Araújo Guedes, 99<br />
+                Morada da Colina — Resende/RJ
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <span>Telefone e WhatsApp</span>
+                (24) 99281-8974
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">🕐</div>
+              <div>
+                <span>Horário de funcionamento</span>
+                Segunda a sábado: 06h às 20h<br />
+                Domingo: 06h às 13h
+              </div>
+            </div>
+
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Hugo+Araújo+Guedes,+99,+Morada+da+Colina,+Resende,+RJ"
+              target="_blank"
+              rel="noopener"
+            >
+              Como chegar
+            </a>
+          </div>
+
+          <div class="map reveal">
+            <div class="map-box">
+              <h3>Encontre a Padaria Colina</h3>
+
+              <p>
+                Rua Hugo Araújo Guedes, 99<br />
+                Morada da Colina — Resende/RJ
+              </p>
+
+              <br />
+
+              <a
+                class="btn btn-primary"
+                href="https://www.google.com/maps/search/?api=1&query=Rua+Hugo+Araújo+Guedes,+99,+Morada+da+Colina,+Resende,+RJ"
+                target="_blank"
+                rel="noopener"
+              >
+                Abrir no mapa
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section" id="contato">
+      <div class="container contact-grid">
+
+        <div class="reveal">
+          <div class="section-label">Fale conosco</div>
+
+          <h2 class="section-title">
+            Vamos preparar algo especial para você?
+          </h2>
+
+          <p class="section-description">
+            Entre em contato para fazer pedidos, encomendas ou tirar dúvidas.
+          </p>
+
+          <div class="contact-details">
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">☎</div>
+              <div>
+                <small>Telefone</small>
+                (24) 99281-8974
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">✆</div>
+              <div>
+                <small>WhatsApp</small>
+                (24) 99281-8974
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">◎</div>
+              <div>
+                <small>Instagram</small>
+                @padariacolinaresende_
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div>
+                <small>Endereço</small>
+                Rua Hugo Araújo Guedes, 99<br />
+                Morada da Colina — Resende/RJ
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Seu nome"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="(00) 00000-0000"
+                required
+              />
+            </div>
+
+            <div class="form-group full">
+              <label for="email">E-mail</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="seuemail@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group full">
+              <label for="message">Mensagem</label>
+              <textarea
+                id="message"
+                placeholder="Como podemos ajudar?"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <button class="btn btn-primary" type="submit">
+                Enviar mensagem
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container footer-grid">
+
+      <div>
+        <a href="#inicio" class="logo">
+          <span class="logo-symbol">✦</span>
+          Padaria Colina
+        </a>
+
+        <p>
+          Pães fresquinhos, cafés especiais e sabores preparados para fazer
+          parte dos seus melhores momentos.
+        </p>
+
+        <div class="socials">
+          <a
+            href="https://www.instagram.com/padariacolinaresende_/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            ◎
+          </a>
+
+          <a href="#" aria-label="Facebook">f</a>
+
+          <a
+            href="https://wa.me/5524992818974"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            ◉
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Links rápidos</h4>
+
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#padaria">Nossa Padaria</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#localizacao">Localização</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Produtos</h4>
+
+        <div class="footer-links">
+          <a href="#produtos">Pães</a>
+          <a href="#produtos">Cafés</a>
+          <a href="#produtos">Bolos</a>
+          <a href="#produtos">Lanches</a>
+          <a href="#produtos">Salgados</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Funcionamento</h4>
+
+        <div class="footer-links">
+          <span>Segunda a sábado</span>
+          <span>06h às 20h</span>
+          <span>Domingo</span>
+          <span>06h às 13h</span>
+          <span>Resende/RJ</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container copyright">
+      © 2026 Padaria Colina. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- BOTÃO FIXO DO WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/5524992818974"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com a Padaria Colina pelo WhatsApp"
+  >
+    ◉
+  </a>
+
+  <script>
+    const header = document.getElementById("header");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const contactForm = document.getElementById("contactForm");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      observer.observe(element);
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const nome = document.getElementById("name").value;
+      const telefone = document.getElementById("phone").value;
+      const mensagem = document.getElementById("message").value;
+
+      const texto =
+        `Olá, Padaria Colina!%0A%0A` +
+        `Nome: ${nome}%0A` +
+        `Telefone: ${telefone}%0A` +
+        `Mensagem: ${mensagem}`;
+
+      window.open(
+        `https://wa.me/5524992818974?text=${texto}`,
+        "_blank"
+      );
+
+      contactForm.reset();
+    });
+  </script>
+
+</body>
+</html>
